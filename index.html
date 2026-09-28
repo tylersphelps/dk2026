@@ -447,7 +447,7 @@ footer {
 #dashboard .hero { display: grid; grid-template-columns: 1fr; gap: 28px; padding: 32px var(--pad) 30px; }
 #dashboard .hero h1.display { font-size: clamp(46px,13vw,104px); margin-top: 8px; }
 #dashboard .stats { display: grid; grid-template-columns: repeat(4,auto); gap: 20px 26px; margin-top: 24px; justify-content: start; }
-#dashboard .stats .k { font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: var(--muted-2); display: block; }
+#dashboard .stats .k { font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase; color: var(--muted-2); display: block; white-space: nowrap; }
 #dashboard .stats .v { font-family: 'Anton', sans-serif; font-size: clamp(22px,6vw,30px); display: block; margin-top: 4px; }
 #dashboard .stats .v.hi { color: var(--money); }
 
@@ -654,6 +654,11 @@ footer {
   #dashboard .chip .ca { display: block; font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Narrow phones: the 4 hero stats go 2x2 so "Weeks Left" never forces sideways scroll */
+@media (max-width: 440px) {
+  #dashboard .stats { grid-template-columns: repeat(2, auto); gap: 16px 40px; }
+}
 </style>
 </head>
 <body>
@@ -701,7 +706,7 @@ footer {
     <div class="stats"><div><span class="k">Pool</span><span class="v">$145.00</span></div>
 <div><span class="k">Entrants</span><span class="v">29</span></div>
 <div><span class="k">High</span><span class="v hi">188.04</span></div>
-<div><span class="k">Left</span><span class="v">19</span></div></div>
+<div><span class="k">Weeks Left</span><span class="v">19</span></div></div>
   </div>
   <div class="recap-panel">
     <div class="eyebrow">The read-out</div>
@@ -2733,7 +2738,7 @@ footer {
 </main>
 
 <footer>
-  DFS League 2026 &middot; season tracker &middot; updated September 28, 2026 at 03:14 PM &middot; through Week 3 of 22 &middot; generated automatically from the league tracker &middot; read-only view
+  DFS League 2026 &middot; season tracker &middot; updated September 28, 2026 at 04:32 PM &middot; through Week 3 of 22 &middot; generated automatically from the league tracker &middot; read-only view
 </footer>
 
 <script>
