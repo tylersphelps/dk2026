@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -503,6 +503,11 @@ footer {
 #dashboard .nm2 { color: var(--muted-2); }
 #dashboard .up { color: var(--r2); font-size: 11px; font-weight: 700; }
 #dashboard .dn { color: var(--hot); font-size: 11px; font-weight: 700; }
+#dashboard .prk { font-variant-numeric: tabular-nums; white-space: nowrap; }
+#dashboard h2.sec + .standings-sub { margin: -12px 0 18px; }
+#dashboard .standings-sub { font-size: 13px; color: var(--muted); letter-spacing: .02em; }
+#dashboard .standings-link { color: var(--r2); text-decoration: none; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+#dashboard .standings-link:hover { color: var(--r1); border-bottom-color: var(--r1); }
 
 #dashboard .weeks { border-top: 1px solid var(--line); }
 #dashboard .week {
@@ -711,20 +716,23 @@ footer {
 
 <div class="dash-section">
   <div class="eyebrow">Season to date</div>
-  <h2 class="sec">Standings</h2>
+  <h2 class="sec">Top 10 Standings</h2>
+  <p class="standings-sub">By earnings to date &middot; <a href="#power" class="standings-link" onclick="showTab('power'); window.scrollTo({top: 0, behavior: 'smooth'}); return false;">See Power Ranking Standings &rarr;</a></p>
   <div class="tw">
     <table>
-      <thead><tr><th></th><th>Member</th><th>Wks</th><th>Avg</th><th>Best</th><th>Winnings</th></tr></thead>
+      <thead><tr><th></th><th>Member</th><th>Power Rank</th><th>Wks</th><th>Avg</th><th>Best</th><th>Winnings</th></tr></thead>
       <tbody><tr>
       <td class="pos">1</td>
-      <td>Cody Alesandrini <span class="dn">&#9660;2</span></td>
+      <td>Cody Alesandrini</td>
+      <td class="prk">#3 <span class="dn">&#9660;2</span></td>
       <td>3</td>
       <td>7.33</td>
       <td>1st</td>
       <td class="money pm">$67.00</td>
     </tr><tr>
       <td class="pos">2</td>
-      <td>Jared Berquist <span class="up">&#9650;15</span></td>
+      <td>Jared Berquist</td>
+      <td class="prk">#4 <span class="up">&#9650;15</span></td>
       <td>3</td>
       <td>12.67</td>
       <td>1st</td>
@@ -732,48 +740,55 @@ footer {
     </tr><tr>
       <td class="pos">3</td>
       <td>Traci Phelps</td>
+      <td class="prk">#2</td>
       <td>3</td>
       <td>8.33</td>
       <td>1st</td>
       <td class="money pm">$55.80</td>
     </tr><tr>
       <td class="pos">4</td>
-      <td>Tyler Phelps <span class="up">&#9650;3</span></td>
+      <td>Tyler Phelps</td>
+      <td class="prk">#1 <span class="up">&#9650;3</span></td>
       <td>3</td>
       <td>6.67</td>
       <td>2nd</td>
       <td class="money pm">$54.00</td>
     </tr><tr>
       <td class="pos">5</td>
-      <td>Skylar Hays <span class="dn">&#9660;3</span></td>
+      <td>Skylar Hays</td>
+      <td class="prk">#6 <span class="dn">&#9660;3</span></td>
       <td>3</td>
       <td>12.67</td>
       <td>2nd</td>
       <td class="money pm">$31.00</td>
     </tr><tr>
       <td class="pos">6</td>
-      <td>Justin Lindstrom <span class="dn">&#9660;4</span></td>
+      <td>Justin Lindstrom</td>
+      <td class="prk">#11 <span class="dn">&#9660;4</span></td>
       <td>3</td>
       <td>15.0</td>
       <td>3rd</td>
       <td class="money pm">$15.50</td>
     </tr><tr>
       <td class="pos">7</td>
-      <td>Marcel Gough <span class="up">&#9650;19</span></td>
+      <td>Marcel Gough</td>
+      <td class="prk">#9 <span class="up">&#9650;19</span></td>
       <td>2</td>
       <td>8.5</td>
       <td>3rd</td>
       <td class="money pm">$14.50</td>
     </tr><tr>
       <td class="pos">8</td>
-      <td>Robbie VanCourt <span class="up">&#9650;3</span></td>
+      <td>Robbie VanCourt</td>
+      <td class="prk">#7 <span class="up">&#9650;3</span></td>
       <td>3</td>
       <td>11.67</td>
       <td>4th</td>
       <td class="money pm">$13.55</td>
     </tr><tr>
       <td class="pos">9</td>
-      <td>Peyton Hale <span class="dn">&#9660;4</span></td>
+      <td>Peyton Hale</td>
+      <td class="prk">#10 <span class="dn">&#9660;4</span></td>
       <td>3</td>
       <td>18.0</td>
       <td>3rd</td>
@@ -781,6 +796,7 @@ footer {
     </tr><tr>
       <td class="pos">10</td>
       <td>Blaze Swift</td>
+      <td class="prk">#5</td>
       <td>3</td>
       <td>9.0</td>
       <td>4th</td>
@@ -2712,7 +2728,7 @@ footer {
 </main>
 
 <footer>
-  DFS League 2026 &middot; season tracker &middot; updated September 28, 2026 at 11:47 AM &middot; through Week 3 of 22 &middot; generated automatically from the league tracker &middot; read-only view
+  DFS League 2026 &middot; season tracker &middot; updated September 28, 2026 at 12:03 PM &middot; through Week 3 of 22 &middot; generated automatically from the league tracker &middot; read-only view
 </footer>
 
 <script>
